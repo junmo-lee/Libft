@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: junmlee <junmlee@student.42seoul.k>        +#+  +:+       +#+         #
+#    By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/06 14:31:11 by junmlee           #+#    #+#              #
-#    Updated: 2023/10/06 16:26:45 by junmlee          ###   ########.fr        #
+#    Updated: 2023/10/06 19:21:59 by junmlee          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,10 +15,10 @@ NAME	= libft.a
 CC		= cc -Wall -Wextra -Werror
 
 RM		= rm
-RMFLAG	= -f
+RMFLAG	= -rf
 
 AR		= ar
-ARFLAGS	= rcus
+ARFLAGS	= -rcus
 
 INCLUDES	= ./includes/ft.h
 

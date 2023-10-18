@@ -6,13 +6,14 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 19:42:09 by junmlee           #+#    #+#             */
-/*   Updated: 2023/10/13 15:36:09 by junmlee          ###   ########.fr       */
+/*   Updated: 2023/10/18 22:49:49 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdlib.h>
 
-void	*memset(void *b, int c, size_t len)
+void	*ft_memset(void *b, int c, size_t len)
 {
 	unsigned char	*arr;
 	size_t			i;

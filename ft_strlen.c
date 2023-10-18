@@ -6,11 +6,14 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 14:52:49 by junmlee           #+#    #+#             */
-/*   Updated: 2023/10/13 14:54:24 by junmlee          ###   ########.fr       */
+/*   Updated: 2023/10/18 23:02:55 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+#include "libft.h"
+#include <stddef.h>
+
+size_t	ft_strlen(const char *str)
 {
 	int	i;
 

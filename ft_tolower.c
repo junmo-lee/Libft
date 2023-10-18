@@ -6,9 +6,11 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 17:51:32 by junmlee           #+#    #+#             */
-/*   Updated: 2023/10/18 21:48:17 by junmlee          ###   ########.fr       */
+/*   Updated: 2023/10/18 22:41:52 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_tolower(int c)
 {

@@ -6,9 +6,11 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 18:17:54 by junmlee           #+#    #+#             */
-/*   Updated: 2023/10/13 18:42:06 by junmlee          ###   ########.fr       */
+/*   Updated: 2023/10/18 22:38:30 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_atoi(const char *str)
 {

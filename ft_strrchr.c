@@ -6,11 +6,13 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 22:23:31 by junmlee           #+#    #+#             */
-/*   Updated: 2023/10/18 22:27:39 by junmlee          ###   ########.fr       */
+/*   Updated: 2023/10/18 22:51:47 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*strrchr(const char *s, int c)
+#include "libft.h"
+
+char	*ft_strrchr(const char *s, int c)
 {
 	char	find;
 

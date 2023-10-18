@@ -6,10 +6,11 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 20:58:57 by junmlee           #+#    #+#             */
-/*   Updated: 2023/10/18 21:03:17 by junmlee          ###   ########.fr       */
+/*   Updated: 2023/10/18 22:41:34 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdlib.h>
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))

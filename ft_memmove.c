@@ -6,13 +6,14 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 21:56:11 by junmlee           #+#    #+#             */
-/*   Updated: 2023/10/18 22:18:14 by junmlee          ###   ########.fr       */
+/*   Updated: 2023/10/18 22:49:45 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdlib.h>
 
-void	*memmove(void *dst, const void *src, size_t len)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	const unsigned char	*src_uc = (unsigned char *)src;
 	unsigned char		*dst_uc;

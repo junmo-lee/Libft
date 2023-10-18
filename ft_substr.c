@@ -6,10 +6,11 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 20:45:49 by junmlee           #+#    #+#             */
-/*   Updated: 2023/10/13 20:51:51 by junmlee          ###   ########.fr       */
+/*   Updated: 2023/10/18 22:41:48 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdlib.h>
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)

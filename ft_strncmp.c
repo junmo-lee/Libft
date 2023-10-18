@@ -6,13 +6,14 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 15:21:03 by junmlee           #+#    #+#             */
-/*   Updated: 2023/10/13 15:54:23 by junmlee          ###   ########.fr       */
+/*   Updated: 2023/10/18 23:05:39 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdlib.h>
 
-int	ft_strncmp(const char *s1, char *s2, size_t n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t			i;
 	unsigned char	*s1_uc;

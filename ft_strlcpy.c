@@ -6,11 +6,13 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 17:01:23 by junmlee           #+#    #+#             */
-/*   Updated: 2023/10/06 19:22:07 by junmlee          ###   ########.fr       */
+/*   Updated: 2023/10/18 23:04:51 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_strlen(char *str)
+#include "libft.h"
+
+size_t	ft_strlen(const char *str)
 {
 	unsigned int	i;
 

@@ -6,9 +6,11 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 19:40:43 by junmlee           #+#    #+#             */
-/*   Updated: 2023/10/18 21:45:41 by junmlee          ###   ########.fr       */
+/*   Updated: 2023/10/18 22:40:38 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isprint(int c)
 {

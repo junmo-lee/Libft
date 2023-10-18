@@ -6,10 +6,11 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 20:19:20 by junmlee           #+#    #+#             */
-/*   Updated: 2023/10/18 21:53:51 by junmlee          ###   ########.fr       */
+/*   Updated: 2023/10/18 22:40:42 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdlib.h>
 
 char	*itoa_init(int n)

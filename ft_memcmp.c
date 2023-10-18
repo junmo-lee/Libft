@@ -6,10 +6,11 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 18:03:30 by junmlee           #+#    #+#             */
-/*   Updated: 2023/10/18 21:48:42 by junmlee          ###   ########.fr       */
+/*   Updated: 2023/10/18 22:40:47 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdlib.h>
 
 int	memcmp(const void *s1, const void *s2, size_t n)

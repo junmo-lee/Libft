@@ -6,10 +6,11 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 17:01:41 by junmlee           #+#    #+#             */
-/*   Updated: 2023/10/18 18:34:32 by junmlee          ###   ########.fr       */
+/*   Updated: 2023/10/18 22:41:45 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdlib.h>
 
 unsigned int	_find_len(char const *s)

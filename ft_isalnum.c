@@ -1,38 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/13 18:07:46 by junmlee           #+#    #+#             */
-/*   Updated: 2023/10/13 18:17:35 by junmlee          ###   ########.fr       */
+/*   Created: 2023/10/06 19:28:00 by junmlee           #+#    #+#             */
+/*   Updated: 2023/10/18 21:45:35 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*strstr(const char *haystack, const char *needle)
+int	ft_isalnum(int c)
 {
-	char	*str;
-	char	*to_find;
-	char	*start;
-
-	str = haystack;
-	to_find = needle;
-
-	if (*to_find == '\0')
-		return (haystack);
-
-	while (*str != '\0')
-	{
-		start = str;
-		while (*start == *to_find)
-		{
-			start++;
-			to_find++;
-		}
-		if (*to_find == '\0')
-			return (str);
-		str++;
-	}
-	return (0);
+	if ('A' <= c && c <= 'Z')
+		return (1);
+	else if ('a' <= c && c <= 'z')
+		return (1);
+	else
+		return (0);
 }

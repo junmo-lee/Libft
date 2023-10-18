@@ -1,19 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/13 15:58:01 by junmlee           #+#    #+#             */
-/*   Updated: 2023/10/13 17:51:24 by junmlee          ###   ########.fr       */
+/*   Created: 2023/10/13 20:07:35 by junmlee           #+#    #+#             */
+/*   Updated: 2023/10/18 21:45:20 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_toupper(int c)
+#include <stdlib.h>
+
+void	*ft_calloc(size_t count, size_t size)
 {
-	if ('a' <= c && c <= 'z')
-		return (c - 32);
-	else
-		return (c);
+	void			*arr;
+	unsigned char	*data;
+	size_t			bytes;
+
+	bytes = count * size;
+	arr = malloc(bytes);
+	if (arr == NULL)
+		return (NULL);
+	data = (unsigned char *)arr;
+	while (bytes > 0)
+	{
+		*data = 0;
+		data++;
+		bytes--;
+	}
+	return (arr);
 }

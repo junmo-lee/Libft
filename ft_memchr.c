@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 17:56:25 by junmlee           #+#    #+#             */
-/*   Updated: 2023/10/13 18:00:10 by junmlee          ###   ########.fr       */
+/*   Updated: 2023/10/18 21:54:13 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,11 @@ void	*memchr(const void *s, int c, size_t n)
 
 	target = (unsigned char)c;
 	s_uc = (unsigned char *)s;
-
 	i = 0;
 	while (i < n)
 	{
 		if (*s_uc == target)
-			return (*s_uc);
+			return (s_uc);
 		s_uc++;
 		i++;
 	}

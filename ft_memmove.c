@@ -1,33 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/13 20:39:59 by junmlee           #+#    #+#             */
-/*   Updated: 2023/10/18 18:36:02 by junmlee          ###   ########.fr       */
+/*   Created: 2023/10/18 21:56:11 by junmlee           #+#    #+#             */
+/*   Updated: 2023/10/18 22:18:14 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-char	*ft_strdup(const char *s1)
+void	*memmove(void *dst, const void *src, size_t len)
 {
-	size_t	len;
-	size_t	i;
-	char	*arr;
+	const unsigned char	*src_uc = (unsigned char *)src;
+	unsigned char		*dst_uc;
+	size_t				i;
 
-	while (*(s1 + len) != '\0')
-		len++;
-	arr = (char *)malloc(sizeof(char) * (len + 1));
-	if (arr == NULL)
-		return (NULL);
+	dst_uc = (unsigned char *)dst;
 	i = 0;
+	if (dst_uc < src_uc)
+	{
+		while (i < len)
+		{
+			*(dst_uc + i) = *(src_uc + i);
+			i++;
+		}
+		return (dst);
+	}
 	while (i < len)
 	{
-		*(arr + i) = *(s1 + i);
+		*(dst_uc + len - i) = *(src_uc + len - i);
 		i++;
 	}
-	return (arr);
+	return (dst);
 }

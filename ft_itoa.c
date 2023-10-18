@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 20:19:20 by junmlee           #+#    #+#             */
-/*   Updated: 2023/10/18 20:58:41 by junmlee          ###   ########.fr       */
+/*   Updated: 2023/10/18 21:53:51 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ char	*itoa_init(int n)
 	unsigned int	len;
 	int				a;
 
+	a = n;
 	len = 0;
 	while (a != 0)
 	{

@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 18:35:08 by junmlee           #+#    #+#             */
-/*   Updated: 2023/10/18 20:37:16 by junmlee          ###   ########.fr       */
+/*   Updated: 2023/10/18 21:44:57 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ char	*_add_word(const char *s1, const char c)
 	}
 	return (arr);
 }
-
 
 void	*free_and_null(char **arr)
 {

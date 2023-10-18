@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/13 20:07:35 by junmlee           #+#    #+#             */
-/*   Updated: 2023/10/13 20:16:38 by junmlee          ###   ########.fr       */
+/*   Created: 2023/10/13 20:39:59 by junmlee           #+#    #+#             */
+/*   Updated: 2023/10/18 22:20:34 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-void	*ft_calloc(size_t count, size_t size)
+char	*ft_strdup(const char *s1)
 {
-	void			*arr;
-	unsigned char	*data;
-	size_t			bytes;
+	size_t	len;
+	size_t	i;
+	char	*arr;
 
-
-	bytes = count * size;
-	arr = malloc(bytes);
+	len = 0;
+	while (*(s1 + len) != '\0')
+		len++;
+	arr = (char *)malloc(sizeof(char) * (len + 1));
 	if (arr == NULL)
 		return (NULL);
-	data = (unsigned char *)arr;
-	while (bytes > 0)
+	i = 0;
+	while (i < len)
 	{
-		*data = 0;
-		data++;
-		bytes--;
+		*(arr + i) = *(s1 + i);
+		i++;
 	}
 	return (arr);
 }

@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/06 19:28:00 by junmlee           #+#    #+#             */
-/*   Updated: 2023/10/13 14:56:11 by junmlee          ###   ########.fr       */
+/*   Created: 2023/10/13 17:52:41 by junmlee           #+#    #+#             */
+/*   Updated: 2023/10/18 22:20:19 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalnum(int c)
+char	*ft_strchr(const char *s, int c)
 {
-	if ('A' <= c && c <= 'Z')
-		return (1);
-	else if ('a' <= c && c <= 'z')
-		return (1);
-	else
-		return (0);
+	char	target;
+
+	target = (char)c;
+	while (*s != '\0')
+	{
+		if (*s == c)
+			return ((char *)s);
+		s++;
+	}
+	return (0);
 }

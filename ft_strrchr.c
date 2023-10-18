@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/13 17:51:32 by junmlee           #+#    #+#             */
-/*   Updated: 2023/10/13 17:52:32 by junmlee          ###   ########.fr       */
+/*   Created: 2023/10/18 22:23:31 by junmlee           #+#    #+#             */
+/*   Updated: 2023/10/18 22:27:39 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_tolower(int c)
+char	*strrchr(const char *s, int c)
 {
-	if ('A' <= c && c <= 'Z')
-		return (c + 32);
-	else
-		return (c);
+	char	find;
+
+	find = c;
+	while (*s != '\0')
+	{
+		if (*s == find)
+			return ((char *)s);
+		s++;
+	}
+	return (0);
 }

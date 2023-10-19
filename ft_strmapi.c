@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 20:58:57 by junmlee           #+#    #+#             */
-/*   Updated: 2023/10/18 22:41:34 by junmlee          ###   ########.fr       */
+/*   Updated: 2023/10/19 17:40:35 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,6 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		ret[i] = f(i, s[i]);
 		i++;
 	}
+	ret[i] = '\0';
 	return (ret);
 }

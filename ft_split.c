@@ -6,35 +6,14 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 18:35:08 by junmlee           #+#    #+#             */
-/*   Updated: 2023/10/18 22:41:09 by junmlee          ###   ########.fr       */
+/*   Updated: 2023/10/19 21:02:13 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-char	*_add_word(const char *s1, const char c)
-{
-	size_t	len;
-	size_t	i;
-	char	*arr;
-
-	len = 0;
-	while (*(s1 + len) != c)
-		len++;
-	arr = (char *)malloc(sizeof(char) * (len + 1));
-	if (arr == NULL)
-		return (NULL);
-	i = 0;
-	while (i < len)
-	{
-		*(arr + i) = *(s1 + i);
-		i++;
-	}
-	return (arr);
-}
-
-void	*free_and_null(char **arr)
+char	**free_ret_null(char **arr)
 {
 	unsigned int	i;
 
@@ -48,57 +27,78 @@ void	*free_and_null(char **arr)
 	return (NULL);
 }
 
-char	**split_init(char const *s, char c)
+char	*_add_word(const char *s1, char c)
+{
+	unsigned int	i;
+	unsigned int	len;
+	char			*arr;
+
+	len = 0;
+	while (*(s1 + len) != c)
+		len++;
+	arr = (char *)malloc(sizeof(char) * (len + 1));
+	if (arr == NULL)
+		return (NULL);
+	i = 0;
+	while (i < len)
+	{
+		*(arr + i) = *(s1 + i);
+		i++;
+	}
+	*(arr + i) = '\0';
+	return (arr);
+}
+
+char	**arr_init(char const *s, char c)
 {
 	unsigned int	i;
 	unsigned int	cnt;
 	char			**ret;
 
+	i = 0;
 	cnt = 0;
-	i = 1;
-	while (*(s + i) != '\0')
+	while (s[i] != '\0')
 	{
-		if (*(s + i - 1) != c && *(s + i) == c)
+		if (s[i] == c)
+			i++;
+		else
+		{
 			cnt++;
-		i++;
+			while (s[i] != '\0' && s[i] != c)
+				i++;
+		}
 	}
-	if (*(s + i - 1) != c)
-		cnt++;
 	ret = (char **)malloc(sizeof(char *) * (cnt + 1));
 	if (ret == NULL)
 		return (NULL);
-	if (*s != c)
-	{
-		*ret = _add_word(s, c);
-		if (*ret == NULL)
-			return (free_and_null(ret));
-	}
 	return (ret);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	unsigned int	i;
-	unsigned int	word_cnt;
 	char			**arr;
+	unsigned int	i;
+	unsigned int	cnt;
 
-	arr = split_init(s, c);
-	if (*s != c)
-		word_cnt = 1;
-	else
-		word_cnt = 0;
-	i = 1;
-	while (*(s + i) != '\0')
+	arr = arr_init(s, c);
+	if (arr == NULL)
+		return (NULL);
+	i = 0;
+	cnt = 0;
+	while (s[i] != '\0')
 	{
-		if (*(s + i - 1) == c && *(s + i) != c)
+		if (s[i] == c)
+			i++;
+		else
 		{
-			*(arr + word_cnt) = _add_word(s + i, c);
-			if (*(arr + word_cnt) == NULL)
-				return (free_and_null(arr));
-			word_cnt++;
+			arr[cnt] = _add_word(s + i, c);
+			if (arr[cnt] == NULL)
+				return (free_ret_null(arr));
+			while (s[i] != '\0' && s[i] != c)
+				i++;
+			cnt++;
 		}
-		i++;
 	}
-	*(arr + word_cnt) = NULL;
+	arr[cnt] = NULL;
 	return (arr);
 }

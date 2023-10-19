@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 21:56:11 by junmlee           #+#    #+#             */
-/*   Updated: 2023/10/18 22:49:45 by junmlee          ###   ########.fr       */
+/*   Updated: 2023/10/19 16:32:53 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	size_t				i;
 
 	dst_uc = (unsigned char *)dst;
+	if (dst_uc == src_uc || len == 0)
+		return (dst);
 	i = 0;
 	if (dst_uc < src_uc)
 	{
@@ -32,7 +34,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	}
 	while (i < len)
 	{
-		*(dst_uc + len - i) = *(src_uc + len - i);
+		*(dst_uc + len - i - 1) = *(src_uc + len - i - 1);
 		i++;
 	}
 	return (dst);

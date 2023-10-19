@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 16:43:01 by junmlee           #+#    #+#             */
-/*   Updated: 2023/10/18 22:41:22 by junmlee          ###   ########.fr       */
+/*   Updated: 2023/10/20 05:36:38 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (NULL);
 	_strcat(arr, s1, s1_len);
 	_strcat(arr + s1_len, s2, s2_len);
-	*(arr + s1_len + s2_len + 1) = '\0';
+	*(arr + s1_len + s2_len) = '\0';
 	return (arr);
 }

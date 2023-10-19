@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 17:52:41 by junmlee           #+#    #+#             */
-/*   Updated: 2023/10/18 22:41:14 by junmlee          ###   ########.fr       */
+/*   Updated: 2023/10/19 16:43:36 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,5 @@ char	*ft_strchr(const char *s, int c)
 			return ((char *)s);
 		s++;
 	}
-	return (0);
+	return ((char *)0);
 }

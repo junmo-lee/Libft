@@ -6,22 +6,25 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 22:23:31 by junmlee           #+#    #+#             */
-/*   Updated: 2023/10/18 22:51:47 by junmlee          ###   ########.fr       */
+/*   Updated: 2023/10/19 16:48:10 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+char	*ft_strrchr(const char *p, int c)
 {
+	char	*ret;
 	char	find;
 
-	find = c;
-	while (*s != '\0')
+	find = (char)c;
+	ret = NULL;
+	while (1)
 	{
-		if (*s == find)
-			return ((char *)s);
-		s++;
+		if (*p == find)
+			ret = (char *)p;
+		if (*p == '\0')
+			return (ret);
+		p++;
 	}
-	return (0);
 }

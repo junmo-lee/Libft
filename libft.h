@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 20:54:44 by junmlee           #+#    #+#             */
-/*   Updated: 2023/10/19 14:58:59 by junmlee          ###   ########.fr       */
+/*   Updated: 2023/10/20 06:43:23 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ char				*ft_strnstr(
 char				*ft_strrchr(const char *s, int c);
 char				*ft_strchr(const char *s, int c);
 size_t				ft_strlcat(char *dest, const char *src, size_t size);
-size_t				ft_strlcpy(char *dest, char *src, size_t size);
+size_t				ft_strlcpy(char *dest, const char *src, size_t size);
 size_t				ft_strlen(const char *str);
 int					ft_toupper(int c);
 int					ft_tolower(int c);

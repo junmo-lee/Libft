@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 16:43:01 by junmlee           #+#    #+#             */
-/*   Updated: 2023/10/20 05:36:38 by junmlee          ###   ########.fr       */
+/*   Updated: 2023/10/20 05:47:09 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	unsigned int	s2_len;
 	char			*arr;
 
+	if (s1 == NULL || s2 == NULL)
+		return (NULL);
 	s1_len = _find_len(s1);
 	s2_len = _find_len(s2);
 	arr = (char *)malloc(sizeof(char) * (s1_len + s2_len + 1));

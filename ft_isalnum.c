@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 19:28:00 by junmlee           #+#    #+#             */
-/*   Updated: 2023/10/18 22:40:22 by junmlee          ###   ########.fr       */
+/*   Updated: 2023/10/19 14:50:38 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 int	ft_isalnum(int c)
 {
-	if ('A' <= c && c <= 'Z')
+	if ('0' <= c && c <= '9')
+		return (1);
+	else if ('A' <= c && c <= 'Z')
 		return (1);
 	else if ('a' <= c && c <= 'z')
 		return (1);

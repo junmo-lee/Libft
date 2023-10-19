@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 20:39:59 by junmlee           #+#    #+#             */
-/*   Updated: 2023/10/18 22:41:17 by junmlee          ###   ########.fr       */
+/*   Updated: 2023/10/19 14:54:42 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,6 @@ char	*ft_strdup(const char *s1)
 		*(arr + i) = *(s1 + i);
 		i++;
 	}
+	*(arr + i) = '\0';
 	return (arr);
 }

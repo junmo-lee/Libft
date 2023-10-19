@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 20:54:44 by junmlee           #+#    #+#             */
-/*   Updated: 2023/10/19 14:44:43 by junmlee          ###   ########.fr       */
+/*   Updated: 2023/10/19 14:58:59 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ char				*ft_strnstr(
 						const char *haystack, const char *needle, size_t len);
 char				*ft_strrchr(const char *s, int c);
 char				*ft_strchr(const char *s, int c);
-size_t				ft_strlcat(char *dest, char *src, size_t size);
+size_t				ft_strlcat(char *dest, const char *src, size_t size);
 size_t				ft_strlcpy(char *dest, char *src, size_t size);
 size_t				ft_strlen(const char *str);
 int					ft_toupper(int c);

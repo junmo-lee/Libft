@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 15:12:58 by junmlee           #+#    #+#             */
-/*   Updated: 2023/10/18 23:04:22 by junmlee          ###   ########.fr       */
+/*   Updated: 2023/10/19 14:44:50 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ size_t	str_len(char *str)
 	return (i);
 }
 
-size_t	ft_strlcat(char *dest, char *src, unsigned int size)
+size_t	ft_strlcat(char *dest, char *src, size_t size)
 {
 	unsigned int	dest_len;
 	unsigned int	src_len;

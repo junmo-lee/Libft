@@ -6,35 +6,43 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 18:07:46 by junmlee           #+#    #+#             */
-/*   Updated: 2023/10/18 23:01:01 by junmlee          ###   ########.fr       */
+/*   Updated: 2023/10/19 17:29:42 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+size_t	find_len(const char *s)
 {
-	char	*str;
-	char	*to_find;
-	char	*start;
 	size_t	i;
 
-	str = (char *)haystack;
-	to_find = (char *)needle;
-	if (*to_find == '\0')
+	i = 0;
+	while (*(s + i) != '\0')
+		i++;
+	return (i);
+}
+
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+{
+	size_t			i;
+	size_t			j;
+	const size_t	needle_len = find_len(needle);
+
+	if (*needle == '\0' || needle == NULL)
 		return ((char *)haystack);
 	i = 0;
-	while (*(str + i) != '\0' || i < len)
+	while (haystack[i] != '\0' || i + needle_len < len)
 	{
-		start = str + i;
-		while (*start == *to_find)
+		j = 0;
+		while (haystack[i + j] == needle[j])
 		{
-			start++;
-			to_find++;
+			if (i + j > len)
+				break ;
+			if (needle[j + 1] == '\0')
+				return ((char *)haystack + i);
+			j++;
 		}
-		if (*to_find == '\0')
-			return (str + i);
 		i++;
 	}
-	return (0);
+	return (NULL);
 }

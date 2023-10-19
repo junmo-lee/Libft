@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 18:35:08 by junmlee           #+#    #+#             */
-/*   Updated: 2023/10/19 21:02:13 by junmlee          ###   ########.fr       */
+/*   Updated: 2023/10/20 05:06:02 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ char	**free_ret_null(char **arr)
 	unsigned int	i;
 
 	i = 0;
-	while (*(arr + i) != NULL)
+	while (arr[i] != NULL)
 	{
-		free(*(arr + i));
+		free(arr[i]);
 		i++;
 	}
 	free(arr);
@@ -34,7 +34,7 @@ char	*_add_word(const char *s1, char c)
 	char			*arr;
 
 	len = 0;
-	while (*(s1 + len) != c)
+	while (s1[len] != '\0' && s1[len] != c)
 		len++;
 	arr = (char *)malloc(sizeof(char) * (len + 1));
 	if (arr == NULL)
@@ -42,10 +42,10 @@ char	*_add_word(const char *s1, char c)
 	i = 0;
 	while (i < len)
 	{
-		*(arr + i) = *(s1 + i);
+		arr[i] = s1[i];
 		i++;
 	}
-	*(arr + i) = '\0';
+	arr[i] = '\0';
 	return (arr);
 }
 
@@ -55,6 +55,8 @@ char	**arr_init(char const *s, char c)
 	unsigned int	cnt;
 	char			**ret;
 
+	if (s == NULL)
+		return (NULL);
 	i = 0;
 	cnt = 0;
 	while (s[i] != '\0')

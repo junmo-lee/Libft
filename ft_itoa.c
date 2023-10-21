@@ -6,37 +6,38 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 20:19:20 by junmlee           #+#    #+#             */
-/*   Updated: 2023/10/21 23:02:22 by junmlee          ###   ########.fr       */
+/*   Updated: 2023/10/22 01:38:28 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-char	*itoa_init(int n)
+char	*itoa_init(long a)
 {
 	char			*ret;
 	unsigned int	len;
-	int				a;
 
-	a = n;
 	len = 0;
+	if (a < 0)
+		len++;
+	if (a == 0)
+	{
+		ret = (char *)malloc(sizeof(char) * 2);
+		if (ret == NULL)
+			return (NULL);
+		ret[0] = '0';
+		ret[1] = '\0';
+		return (ret);
+	}
 	while (a != 0)
 	{
 		len++;
 		a /= 10;
 	}
-	if (n < 0)
-		len++;
 	ret = (char *)malloc(sizeof(char) * (len + 1));
 	if (ret == NULL)
 		return (NULL);
-	if (n == 0)
-	{
-		ret = (char *)malloc(sizeof(char) * 2);
-		ret[0] = '0';
-		ret[1] = '\0';
-	}
 	return (ret);
 }
 
@@ -66,15 +67,15 @@ char	*ft_itoa(int n)
 	unsigned int	i;
 	long			a;
 
-	arr = itoa_init(n);
+	arr = itoa_init((long)n);
 	if (arr == NULL)
 		return (NULL);
+	if (n == 0)
+		return (arr);
 	i = 0;
 	a = n;
 	if (n < 0)
 		a = -a;
-	if (n == 0)
-		return (arr);
 	while (a != 0)
 	{
 		arr[i] = a % 10 + '0';

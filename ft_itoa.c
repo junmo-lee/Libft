@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 20:19:20 by junmlee           #+#    #+#             */
-/*   Updated: 2023/10/18 22:40:42 by junmlee          ###   ########.fr       */
+/*   Updated: 2023/10/21 23:02:22 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,9 @@ char	*itoa_init(int n)
 		len++;
 		a /= 10;
 	}
-	ret = (char *)malloc(sizeof(char) * (len + 2));
+	if (n < 0)
+		len++;
+	ret = (char *)malloc(sizeof(char) * (len + 1));
 	if (ret == NULL)
 		return (NULL);
 	if (n == 0)
@@ -45,7 +47,7 @@ void	arr_rev(char *arr)
 	char			temp;
 
 	len = 0;
-	while (*(arr + len) != 0)
+	while (arr[len] != '\0')
 		len++;
 	i = 0;
 	while (i < (len / 2))

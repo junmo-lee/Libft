@@ -6,29 +6,36 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 20:07:35 by junmlee           #+#    #+#             */
-/*   Updated: 2023/10/18 22:40:17 by junmlee          ###   ########.fr       */
+/*   Updated: 2023/10/21 22:07:52 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-void	*ft_calloc(size_t count, size_t size)
+void	_bzero(void *b, size_t len)
 {
-	void			*arr;
 	unsigned char	*data;
-	size_t			bytes;
+	size_t			i;
 
-	bytes = count * size;
-	arr = malloc(bytes);
-	if (arr == NULL)
-		return (NULL);
-	data = (unsigned char *)arr;
-	while (bytes > 0)
+	data = (unsigned char *)b;
+	i = 0;
+	while (i < len)
 	{
 		*data = 0;
 		data++;
-		bytes--;
+		i++;
 	}
+	return ;
+}
+
+void	*ft_calloc(size_t count, size_t size)
+{
+	void	*arr;
+
+	arr = malloc(count * size);
+	if (arr == NULL)
+		return (NULL);
+	_bzero(arr, count * size);
 	return (arr);
 }

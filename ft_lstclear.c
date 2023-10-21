@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 09:51:19 by junmlee           #+#    #+#             */
-/*   Updated: 2023/10/21 14:43:14 by junmlee          ###   ########.fr       */
+/*   Updated: 2023/10/22 03:08:02 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 		return ;
 	while (*lst != NULL)
 	{
-		del((*lst)->content);
-		temp = (*lst)->next;
-		free((*lst));
-		*lst = temp;
+		temp = *lst;
+		*lst = (*lst)->next;
+		del(temp->content);
+		free(temp);
 	}
 }

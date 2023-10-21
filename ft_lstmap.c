@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 10:01:08 by junmlee           #+#    #+#             */
-/*   Updated: 2023/10/21 21:02:17 by junmlee          ###   ########.fr       */
+/*   Updated: 2023/10/22 03:08:19 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ void	_lstclear(t_list **lst, void (*del)(void *))
 		return ;
 	while (*lst != NULL)
 	{
-		del((*lst)->content);
-		temp = (*lst)->next;
-		free((*lst));
-		*lst = temp;
+		temp = *lst;
+		*lst = (*lst)->next;
+		del(temp->content);
+		free(temp);
 	}
 }
 
@@ -46,7 +46,6 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		if (cur->next == NULL)
 		{
 			_lstclear(&cur, del);
-			free(ret);
 			return (NULL);
 		}
 		cur = cur->next;

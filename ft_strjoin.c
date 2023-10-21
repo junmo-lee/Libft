@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 16:43:01 by junmlee           #+#    #+#             */
-/*   Updated: 2023/10/21 15:23:58 by junmlee          ###   ########.fr       */
+/*   Updated: 2023/10/21 17:56:37 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,8 @@ void	_strcat(char *arr, char const *s, unsigned int _len)
 	i = 0;
 	while (*(s + i) != '\0' && i < _len)
 	{
-		*arr = *(s + i);
+		arr[i] = s[i];
 		i++;
-		arr++;
 	}
 }
 

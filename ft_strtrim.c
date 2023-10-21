@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 17:01:41 by junmlee           #+#    #+#             */
-/*   Updated: 2023/10/21 15:23:45 by junmlee          ###   ########.fr       */
+/*   Updated: 2023/10/21 19:06:15 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ unsigned int	len_find(char const *s)
 
 int	is_in_set(char s, char const *set)
 {
+	if (set == NULL)
+		return (0);
 	while (*set != '\0')
 	{
 		if (s == *set)
@@ -58,8 +60,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	unsigned int	start;
 	unsigned int	end;
 
-	if (s1 == NULL)
-		return (NULL);
+	if (s1 == NULL || set == NULL || *s1 == '\0' || *set == '\0')
+		return (_strdup("", 0));
 	start = 0;
 	while (s1[start] != '\0' && is_in_set(s1[start], set))
 		start++;

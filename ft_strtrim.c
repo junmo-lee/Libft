@@ -6,14 +6,14 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 17:01:41 by junmlee           #+#    #+#             */
-/*   Updated: 2023/10/20 06:59:36 by junmlee          ###   ########.fr       */
+/*   Updated: 2023/10/21 15:23:45 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-unsigned int	_find_len(char const *s)
+unsigned int	len_find(char const *s)
 {
 	unsigned int	i;
 
@@ -63,7 +63,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	start = 0;
 	while (s1[start] != '\0' && is_in_set(s1[start], set))
 		start++;
-	end = _find_len(s1) - 1;
+	end = len_find(s1) - 1;
 	while (s1[end] != '\0' && is_in_set(s1[end], set) && start < end)
 		end--;
 	arr = _strdup(s1 + start, end - start + 1);

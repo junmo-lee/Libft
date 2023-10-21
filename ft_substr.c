@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 20:45:49 by junmlee           #+#    #+#             */
-/*   Updated: 2023/10/19 17:51:05 by junmlee          ###   ########.fr       */
+/*   Updated: 2023/10/22 01:17:53 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,22 +23,10 @@ unsigned int	find_s_len(char const *s)
 	return (i);
 }
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+void	_strcpy(char const *s, char *arr, unsigned int start, size_t len)
 {
-	char			*arr;
-	unsigned int	i;
+	size_t	i;
 
-	if (s == NULL)
-		return (NULL);
-	if (start >= find_s_len(s))
-	{
-		arr = (char *)malloc(sizeof(char));
-		*arr = '\0';
-		return (arr);
-	}
-	arr = (char *)malloc(sizeof(char) * (len + 1));
-	if (arr == NULL)
-		return (NULL);
 	i = 0;
 	while (s[start + i] != '\0' && i < len)
 	{
@@ -46,5 +34,27 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		i++;
 	}
 	arr[i] = '\0';
+}
+
+char	*ft_substr(char const *s, unsigned int start, size_t len)
+{
+	char			*arr;
+
+	if (s == NULL)
+		return (NULL);
+	if (find_s_len(s) < start)
+	{
+		arr = (char *)malloc(sizeof(char));
+		if (arr == NULL)
+			return (NULL);
+		*arr = '\0';
+		return (arr);
+	}
+	if (ft_strlen(s + start) < len)
+		len = ft_strlen(s + start);
+	arr = (char *)malloc(sizeof(char) * (len + 1));
+	if (arr == NULL)
+		return (NULL);
+	_strcpy(s, arr, start, len);
 	return (arr);
 }

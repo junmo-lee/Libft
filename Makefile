@@ -4,7 +4,7 @@ CC		= cc
 CFLAGS	= -Wall -Wextra -Werror
 
 AR		= ar
-ARFLAGS	= -rcus
+ARFLAGS	= -rcs
 
 INC		= ./libft.h
 SRCS	= ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c \

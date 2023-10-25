@@ -1,7 +1,10 @@
+.DEFAULT_GOAL := all
+
 NAME	= libft.a
 
 CC		= cc
 CFLAGS	= -Wall -Wextra -Werror
+CDEF	= -MMD -MP
 
 AR		= ar
 ARFLAGS	= -rcs
@@ -20,31 +23,36 @@ SRCS_B	= ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.
 OBJS	= $(SRCS:.c=.o)
 OBJS_B	= $(SRCS_B:.c=.o)
 
-ifdef WITH_BONUS
-	OBJ_FILES = $(OBJS) $(OBJS_B)
-else
-	OBJ_FILES = $(OBJS)
-endif
+DEF		= $(SRCS:.c=.d) $(SRCS_B:.c=.d)
+-include $(DEP)
 
-all : $(NAME)
-
-bonus :
-	make WITH_BONUS=1
+all: LAST_ALL
+bonus: LAST_BONUS
 
 clean :
-	rm -f $(OBJS) $(OBJS_B)
+	rm -f $(OBJS) $(OBJS_B) $(DEF)
 
-fclean : clean
-	rm -f $(NAME)
+fclean :
+	rm -f $(OBJS) $(OBJS_B) $(DEF) $(NAME)
 
 re :
 	make fclean
 	make all
 
-$(NAME) : $(OBJ_FILES)
-	$(AR) $(ARFLAGS) $@ $^
+$(NAME) :
+	make all
 
 %.o : %.c
-	$(CC) $(CFLAGS) -c $< -o $@ -I $(INC)
+	$(CC) $(CFLAGS) $(CDEF) -c $< -o $@ -I $(INC)
 
 .PHONY : all bonus clean fclean re
+
+LAST_ALL: $(OBJS)
+	rm -f LAST_BONUS
+	$(AR) $(ARFLAGS) $(NAME) $^
+	touch $@
+
+LAST_BONUS: $(OBJS) $(OBJS_B)
+	rm -f LAST_ALL
+	$(AR) $(ARFLAGS) $(NAME) $^
+	touch $@

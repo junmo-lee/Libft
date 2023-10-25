@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 10:01:08 by junmlee           #+#    #+#             */
-/*   Updated: 2023/10/22 10:08:53 by junmlee          ###   ########.fr       */
+/*   Updated: 2023/10/25 18:54:40 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,29 +40,54 @@ void	_lstclear(t_list **lst, void (*del)(void *))
 	}
 }
 
+void	_lstadd_back(t_list **lst, t_list *new, t_list **cache)
+{
+	t_list	*temp;
+
+	if (lst == NULL || new == NULL)
+		return ;
+	if (*lst == NULL)
+		*lst = new;
+	else
+	{
+		if (*cache == NULL)
+		{
+			temp = *lst;
+			while (temp->next != NULL)
+				temp = temp->next;
+			temp->next = new;
+			*cache = new;
+		}
+		else
+		{
+			(*cache)->next = new;
+			*(cache) = new;
+		}
+	}
+}
+
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*ret;
-	t_list	*cur;
-	t_list	*temp;
+	t_list	*add_node;
+	t_list	*cache;
+	void	*current;
 
-	if (lst == NULL || f == NULL || del == NULL)
+	if (f == NULL || del == NULL)
 		return (NULL);
-	ret = _lstnew(f(lst->content));
-	if (ret == NULL)
-		return (NULL);
-	cur = ret;
-	lst = lst->next;
-	while (lst)
+	ret = NULL;
+	cache = NULL;
+	while (lst != NULL)
 	{
-		temp = _lstnew(f(lst->content));
-		if (temp == NULL)
+		current = f(lst->content);
+		add_node = ft_lstnew(current);
+		if (!add_node)
 		{
+			del(current);
 			_lstclear(&ret, del);
 			return (NULL);
 		}
-		cur->next = temp;
-		cur = temp;
+		_lstadd_back(&ret, add_node, &cache);
 		lst = lst->next;
 	}
 	return (ret);

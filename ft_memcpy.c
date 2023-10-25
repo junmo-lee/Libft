@@ -6,12 +6,11 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 15:02:26 by junmlee           #+#    #+#             */
-/*   Updated: 2023/10/21 17:34:30 by junmlee          ###   ########.fr       */
+/*   Updated: 2023/10/25 15:11:59 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {

@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 19:29:38 by junmlee           #+#    #+#             */
-/*   Updated: 2023/10/18 22:40:29 by junmlee          ###   ########.fr       */
+/*   Updated: 2023/10/29 20:35:48 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,5 @@
 
 int	ft_isascii(int c)
 {
-	if (0 <= c && c <= 0177)
-		return (1);
-	else
-		return (0);
+	return (0 <= c & c <= 0177);
 }

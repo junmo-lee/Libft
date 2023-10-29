@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 20:58:57 by junmlee           #+#    #+#             */
-/*   Updated: 2023/10/21 19:05:51 by junmlee          ###   ########.fr       */
+/*   Updated: 2023/10/29 20:25:19 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 	if (s == NULL || f == NULL)
 		return (NULL);
-	len = 0;
-	while (*(s + len) != '\0')
-		len++;
+	len = ft_strlen(s);
 	ret = (char *)malloc(sizeof(char) * (len + 1));
 	if (ret == NULL)
 		return (NULL);

@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 21:08:56 by junmlee           #+#    #+#             */
-/*   Updated: 2023/10/21 19:08:26 by junmlee          ###   ########.fr       */
+/*   Updated: 2023/10/29 20:37:32 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,7 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	unsigned int	i;
-
 	if (s == NULL)
 		return ;
-	i = 0;
-	while (*(s + i) != '\0')
-		i++;
-	write(fd, s, i);
+	write(fd, s, ft_strlen(s));
 }

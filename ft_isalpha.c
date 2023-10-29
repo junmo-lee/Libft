@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 18:17:42 by junmlee           #+#    #+#             */
-/*   Updated: 2023/10/19 14:50:45 by junmlee          ###   ########.fr       */
+/*   Updated: 2023/10/29 20:35:48 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,5 @@
 
 int	ft_isalpha(int c)
 {
-	if ('A' <= c && c <= 'Z')
-		return (1);
-	else if ('a' <= c && c <= 'z')
-		return (1);
-	else
-		return (0);
+	return (('A' <= c & c <= 'Z') | ('a' <= c & c <= 'z'));
 }

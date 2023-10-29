@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 20:39:59 by junmlee           #+#    #+#             */
-/*   Updated: 2023/10/19 14:54:42 by junmlee          ###   ########.fr       */
+/*   Updated: 2023/10/29 20:23:47 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,16 @@ char	*ft_strdup(const char *s1)
 	size_t	i;
 	char	*arr;
 
-	len = 0;
-	while (*(s1 + len) != '\0')
-		len++;
+	len = ft_strlen(s1);
 	arr = (char *)malloc(sizeof(char) * (len + 1));
 	if (arr == NULL)
 		return (NULL);
 	i = 0;
 	while (i < len)
 	{
-		*(arr + i) = *(s1 + i);
+		arr[i] = s1[i];
 		i++;
 	}
-	*(arr + i) = '\0';
+	arr[i] = '\0';
 	return (arr);
 }

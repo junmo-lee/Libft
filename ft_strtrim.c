@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 17:01:41 by junmlee           #+#    #+#             */
-/*   Updated: 2023/10/29 20:04:05 by junmlee          ###   ########.fr       */
+/*   Updated: 2023/10/29 20:27:11 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static char	*strdup_len(const char *s1, unsigned int len)
 	i = 0;
 	while (i < len)
 	{
-		*(arr + i) = *(s1 + i);
+		arr[i] = s1[i];
 		i++;
 	}
 	*(arr + i) = '\0';

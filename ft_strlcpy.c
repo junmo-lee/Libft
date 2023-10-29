@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 17:01:23 by junmlee           #+#    #+#             */
-/*   Updated: 2023/10/29 20:00:03 by junmlee          ###   ########.fr       */
+/*   Updated: 2023/10/29 20:24:52 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 	i = 0;
 	while (*(src + i) != '\0' && (i + 1) < size)
 	{
-		*(dest + i) = *(src + i);
+		dest[i] = src[i];
 		i++;
 	}
-	*(dest + i) = '\0';
+	dest[i] = '\0';
 	return (src_size);
 }

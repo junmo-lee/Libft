@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 21:11:40 by junmlee           #+#    #+#             */
-/*   Updated: 2023/10/29 19:58:58 by junmlee          ###   ########.fr       */
+/*   Updated: 2023/10/29 20:32:03 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void	put_nbr(int n, int fd)
 
 	if (n >= 10)
 		put_nbr(n / 10, fd);
-	write(fd, base + n % 10, 1);
+	write(fd, base + (n % 10), 1);
 }
 
 void	ft_putnbr_fd(int n, int fd)

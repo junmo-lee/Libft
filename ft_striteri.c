@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 21:03:30 by junmlee           #+#    #+#             */
-/*   Updated: 2023/10/21 21:03:34 by junmlee          ###   ########.fr       */
+/*   Updated: 2023/10/29 20:23:58 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 	if (s == NULL || f == NULL)
 		return ;
 	i = 0;
-	while (*(s + i) != '\0')
+	while (s[i] != '\0')
 	{
 		f(i, s + i);
 		i++;

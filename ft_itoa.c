@@ -6,7 +6,7 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 20:19:20 by junmlee           #+#    #+#             */
-/*   Updated: 2023/10/29 19:57:35 by junmlee          ###   ########.fr       */
+/*   Updated: 2023/10/29 20:21:04 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,6 @@ static char	*itoa_init(long a)
 	len = 0;
 	if (a < 0)
 		len++;
-	if (a == 0)
-	{
-		ret = (char *)malloc(sizeof(char) * 2);
-		if (ret == NULL)
-			return (NULL);
-		ret[0] = '0';
-		ret[1] = '\0';
-		return (ret);
-	}
 	while (a != 0)
 	{
 		len++;
@@ -67,11 +58,11 @@ char	*ft_itoa(int n)
 	unsigned int	i;
 	long			a;
 
-	arr = itoa_init((long)n);
+	if (n == 0)
+		return (ft_strdup("0"));
+	arr = itoa_init(n);
 	if (arr == NULL)
 		return (NULL);
-	if (n == 0)
-		return (arr);
 	i = 0;
 	a = n;
 	if (n < 0)

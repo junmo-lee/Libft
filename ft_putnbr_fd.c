@@ -6,16 +6,16 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 21:11:40 by junmlee           #+#    #+#             */
-/*   Updated: 2023/10/18 22:41:02 by junmlee          ###   ########.fr       */
+/*   Updated: 2023/10/29 19:58:58 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <unistd.h>
 
-void	put_nbr(int n, int fd)
+static void	put_nbr(int n, int fd)
 {
-	const char	base[10] = "0123456789";
+	const char	*base = "0123456789";
 
 	if (n >= 10)
 		put_nbr(n / 10, fd);

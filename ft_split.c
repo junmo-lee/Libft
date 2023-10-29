@@ -6,14 +6,14 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 18:35:08 by junmlee           #+#    #+#             */
-/*   Updated: 2023/10/20 06:47:11 by junmlee          ###   ########.fr       */
+/*   Updated: 2023/10/29 19:59:15 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-char	**free_ret_null(char **arr)
+static char	**free_ret_null(char **arr)
 {
 	unsigned int	i;
 
@@ -27,7 +27,7 @@ char	**free_ret_null(char **arr)
 	return (NULL);
 }
 
-char	*_add_word(const char *s1, char c)
+static char	*_add_word(const char *s1, char c)
 {
 	unsigned int	i;
 	unsigned int	len;
@@ -49,7 +49,7 @@ char	*_add_word(const char *s1, char c)
 	return (arr);
 }
 
-char	**arr_init(char const *s, char c)
+static char	**arr_init(char const *s, char c)
 {
 	unsigned int	i;
 	unsigned int	cnt;

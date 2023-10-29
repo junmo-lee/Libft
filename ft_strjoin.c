@@ -6,34 +6,12 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 16:43:01 by junmlee           #+#    #+#             */
-/*   Updated: 2023/10/21 17:56:37 by junmlee          ###   ########.fr       */
+/*   Updated: 2023/10/29 20:11:51 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
-
-unsigned int	_find_len(char const *s)
-{
-	unsigned int	i;
-
-	i = 0;
-	while (*(s + i) != '\0')
-		i++;
-	return (i);
-}
-
-void	_strcat(char *arr, char const *s, unsigned int _len)
-{
-	unsigned int	i;
-
-	i = 0;
-	while (*(s + i) != '\0' && i < _len)
-	{
-		arr[i] = s[i];
-		i++;
-	}
-}
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
@@ -43,13 +21,13 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	if (s1 == NULL || s2 == NULL)
 		return (NULL);
-	s1_len = _find_len(s1);
-	s2_len = _find_len(s2);
+	s1_len = ft_strlen(s1);
+	s2_len = ft_strlen(s2);
 	arr = (char *)malloc(sizeof(char) * (s1_len + s2_len + 1));
 	if (arr == NULL)
 		return (NULL);
-	_strcat(arr, s1, s1_len);
-	_strcat(arr + s1_len, s2, s2_len);
+	ft_strlcpy(arr, s1, s1_len + 1);
+	ft_strlcpy(arr + s1_len, s2, s2_len + 1);
 	*(arr + s1_len + s2_len) = '\0';
 	return (arr);
 }

@@ -6,24 +6,14 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 17:01:41 by junmlee           #+#    #+#             */
-/*   Updated: 2023/10/22 01:24:31 by junmlee          ###   ########.fr       */
+/*   Updated: 2023/10/29 20:04:05 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-unsigned int	len_find(char const *s)
-{
-	unsigned int	i;
-
-	i = 0;
-	while (*(s + i) != '\0')
-		i++;
-	return (i);
-}
-
-int	is_in_set(char s, char const *set)
+static int	is_in_set(char s, char const *set)
 {
 	if (set == NULL)
 		return (1);
@@ -36,7 +26,7 @@ int	is_in_set(char s, char const *set)
 	return (0);
 }
 
-char	*_strdup(const char *s1, unsigned int len)
+static char	*strdup_len(const char *s1, unsigned int len)
 {
 	char			*arr;
 	unsigned int	i;
@@ -61,14 +51,14 @@ char	*ft_strtrim(char const *s1, char const *set)
 	unsigned int	end;
 
 	if (s1 == NULL || *s1 == '\0')
-		return (_strdup("", 0));
+		return (strdup_len("", 0));
 	start = 0;
 	while (s1[start] != '\0' && is_in_set(s1[start], set))
 		start++;
-	end = len_find(s1) - 1;
+	end = ft_strlen(s1) - 1;
 	while (s1[end] != '\0' && is_in_set(s1[end], set) && start < end)
 		end--;
-	arr = _strdup(s1 + start, end - start + 1);
+	arr = strdup_len(s1 + start, end - start + 1);
 	if (arr == NULL)
 		return (NULL);
 	return (arr);

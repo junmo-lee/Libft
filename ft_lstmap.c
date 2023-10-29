@@ -6,41 +6,14 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 10:01:08 by junmlee           #+#    #+#             */
-/*   Updated: 2023/10/25 18:54:40 by junmlee          ###   ########.fr       */
+/*   Updated: 2023/10/29 19:58:25 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-t_list	*_lstnew(void *content)
-{
-	t_list	*add;
-
-	add = (t_list *)malloc(sizeof(t_list));
-	if (add == NULL)
-		return (NULL);
-	add->next = NULL;
-	add->content = content;
-	return (add);
-}
-
-void	_lstclear(t_list **lst, void (*del)(void *))
-{
-	t_list	*temp;
-
-	if (lst == NULL || del == NULL)
-		return ;
-	while (*lst != NULL)
-	{
-		temp = *lst;
-		*lst = (*lst)->next;
-		del(temp->content);
-		free(temp);
-	}
-}
-
-void	_lstadd_back(t_list **lst, t_list *new, t_list **cache)
+static void	add_back(t_list **lst, t_list *new, t_list **cache)
 {
 	t_list	*temp;
 
@@ -84,10 +57,10 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		if (!add_node)
 		{
 			del(current);
-			_lstclear(&ret, del);
+			ft_lstclear(&ret, del);
 			return (NULL);
 		}
-		_lstadd_back(&ret, add_node, &cache);
+		add_back(&ret, add_node, &cache);
 		lst = lst->next;
 	}
 	return (ret);

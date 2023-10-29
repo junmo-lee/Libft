@@ -6,14 +6,14 @@
 /*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 20:19:20 by junmlee           #+#    #+#             */
-/*   Updated: 2023/10/22 01:38:28 by junmlee          ###   ########.fr       */
+/*   Updated: 2023/10/29 19:57:35 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-char	*itoa_init(long a)
+static char	*itoa_init(long a)
 {
 	char			*ret;
 	unsigned int	len;
@@ -41,7 +41,7 @@ char	*itoa_init(long a)
 	return (ret);
 }
 
-void	arr_rev(char *arr)
+static void	arr_rev(char *arr)
 {
 	unsigned int	len;
 	unsigned int	i;

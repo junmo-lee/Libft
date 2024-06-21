@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 21:56:11 by junmlee           #+#    #+#             */
-/*   Updated: 2023/10/29 20:22:10 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/06/21 21:37:30 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {

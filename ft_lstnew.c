@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 07:05:38 by junmlee           #+#    #+#             */
-/*   Updated: 2023/10/20 07:10:02 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/06/21 21:38:23 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 t_list	*ft_lstnew(void *content)
 {

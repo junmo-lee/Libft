@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: junmlee <junmlee@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: junmlee <junmlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 10:01:08 by junmlee           #+#    #+#             */
-/*   Updated: 2023/10/29 19:58:25 by junmlee          ###   ########.fr       */
+/*   Updated: 2024/06/21 21:38:25 by junmlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 static void	add_back(t_list **lst, t_list *new, t_list **cache)
 {
